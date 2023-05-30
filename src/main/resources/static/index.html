@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loading Page Design</title>
+<style>
+body{
+	  background-color: #cf6969;
+	}
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image: url('https://media.istockphoto.com/id/1446679072/photo/podium-with-neon-glow-on-a-black-background-3d-render.jpg?s=612x612&w=0&k=20&c=pw-aVVdEDNkiaj5CFUJVvxtvxYpWulw75g9hBssxV_M=');
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.circle {
+	width: 20px;
+	height: 20px;
+	margin: 10px;
+	border-radius: 50%;
+	background-color: #f07070;
+	animation: loader 1s ease-in-out infinite;
+}
+.circle:nth-child(2) {
+	animation-delay: 100ms;
+}
+.circle:nth-child(3) {
+	animation-delay: 200ms;
+}
+.circle:nth-child(4) {
+	animation-delay: 400ms;
+}
+.circle:nth-child(5) 
+{
+animation-delay: 800ms;
+}
+.loader a{
+	text-decoration: none;
+	color: rgb(56, 34, 223);
+}
+@keyframes loader {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+}
+.c a{
+	text-decoration: none;
+	color: rgba(243, 125, 51, 0.984);
+}
+.c{
+	font-size: 20px;
+	font-weight: bolder;
+}
+.c:hover{
+	background-color: black;
+}
+    </style>
+</head>
+<body>
+	<div class="loader">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+        <div class="c"><a href="register">Click Here</a></div>
+	</div>
+</body>
+</html>

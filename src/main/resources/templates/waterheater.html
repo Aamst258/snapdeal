@@ -1,0 +1,249 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Water heater web page</title>
+    <style>
+  nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fe2c54;
+  color: #fff;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-bar input[type="text"] {
+  width: 28vw;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button[type="button"] {
+  padding: 10px;
+  background-color: #101210;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px px 0;
+  cursor: pointer;
+}
+
+.cart a,
+.signin a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cart a:hover,
+.signin a:hover {
+  background-color: #555;
+}
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left: 9px;
+  top: 29;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+.sidebar-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-list li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  font-weight: bolder;
+}
+.sidebar-list li a:hover {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 0 0 10px;
+}
+body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			max-width: 1200px;
+			padding: 20px;
+      margin-top: 10px;
+      margin-left: 15rem;
+		}
+		.product-image {
+			float: left;
+			margin-right: 20px;
+		}
+		.product-image img {
+			max-width: 100%;
+			height: auto;
+		}
+		.product-info {
+			overflow: hidden;
+		}
+		.product-title {
+			font-size: 24px;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		.product-description {
+			font-size: 16px;
+			margin-top: 0;
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+		.product-price {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.product-quantity {
+			margin-bottom: 20px;
+		}
+		.quantity-label {
+			font-size: 16px;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+		.quantity-input {
+			padding: 5px;
+			font-size: 16px;
+			width: 50px;
+		}
+		.add-to-cart,
+		.add-to-wishlist,
+		.buy-now {
+			background-color: #008CBA;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+		.add-to-cart:hover,
+		.add-to-wishlist:hover,
+		.buy-now:hover {
+			background-color: #005F6B;
+		}
+		.button-row {
+			display: flex;
+			justify-content: space-between;
+		}
+        .product-image img {
+         transition: transform .3s ease;
+        }
+
+        .product-image:hover img {
+        transform: scale(1.2);
+        }
+
+       .product-image:active img {
+       transform: scale(0.8);
+       }
+       .buy-now a{
+        text-decoration: none;
+        color: #f1f1f1;
+       }
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Snapdeal</a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" >
+          <button type="button" class="fa fa-camera"></button>
+          <button type="button" class="fa fa-microphone"></button>
+        </div>
+        <div class="cart">
+          <a href="map" class="fa fa-map-marker"> Location</a>
+        </div>
+        <div class="cart">
+          <a href="cart" class="fa fa-shopping-cart"> Cart</a>
+        </div>
+        <div class="signin">
+          <a href="details" class="fa fa-user-circle">Sign in</a>
+        </div>
+      </nav>
+      <div class="sidebar">
+        <ul class="sidebar-list">
+            <h4>TOP CATEGORY</h4>
+          <li><a href="home">Home</a></li> 
+          <li><a href="men">Men's Fashion</a></li>
+          <li><a href="women">Women's Fashion</a></li>
+          <li><a href="kitchen">Home & Kitchen</a></li>
+          <li><a href="kids">Kid's Fashion</a></li>
+          <li><a href="beauty">Beauty,Health</a></li>
+          <li><a href="Electronics">Electronics</a></li>
+          <li><a href="sports">Sports</a></li>
+          <li><a href="wishlist">Wishlist</a></li>
+          <li><a href="settings">Settings</a></li>
+          <li><a href="logout">Logout</a></li> 
+        </ul>
+      </div>
+      <div class="container">
+        <div class="product-image">
+        <img src="https://m.media-amazon.com/images/I/51zfltcF4hL._SX522_.jpg">
+        </div>
+        <div class="product-info">
+          <h1 class="product-title">Havells Instanio 3-Litre Instant Geyser (White/Blue), Wall Mount</h1>
+          <p class="product-description">
+            Brand	Havells
+            Capacity	3 litres
+            Power Source	Corded Electric
+            Item Dimensions LxWxH	22.5 x 19 x 37.3 Centimeters
+            Special Feature	Rust Proof </p>
+          <p class="product-price">3,999/-</p>
+          <div class="product-quantity">
+            <label for="quantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="quantity" class="quantity-input" value="1">
+          </div>
+          <div class="button-row">
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-wishlist" onclick="addToWishlist()">Add to Wishlist</button>
+            <button class="buy-now"><a href="Payment">BuyNow</button>
+          </div>
+        </div>
+      </div>
+      <script>
+        function addToCart() {
+			var quantity = document.getElementById("quantity").value;
+			alert(quantity + " Product Name added to cart!");
+		}
+		function addToWishlist() {
+			alert("Product Name added to wishlist!");
+		}
+</script>
+ </body>
+ </html>

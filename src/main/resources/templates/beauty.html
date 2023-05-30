@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Beauty,Health</title>
+    <style>
+        nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fe2c54;
+  color: #fff;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-bar input[type="text"] {
+  width: 26vw;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button[type="button"] {
+  padding: 10px;
+  background-color: #101210;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px px 0;
+  cursor: pointer;
+}
+
+.cart a,
+.signin a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cart a:hover,
+.signin a:hover {
+  background-color: #555;
+}
+.sidebar {
+  width: 200px;
+  height: 150%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left: 8.8px;
+  top: 29;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+.sidebar-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-list li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  font-weight: bolder;
+}
+
+.sidebar-list li a:hover {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 0 0 10px;
+}
+h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.categories {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.category {
+	width: 200px;
+	margin: 20px;
+	text-align: center;
+}
+
+.category img {
+	width: 200px;
+	height: 200px;
+	border-style: solid;
+	border-radius: 15px;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Snapdeal</a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" >
+          <button type="button" class="fa fa-camera"></button>
+          <button type="button" class="fa fa-microphone"></button>
+        </div>
+        <div class="cart">
+          <a href="map" class="fa fa-map-marker"> Location</a>
+        </div>
+        <div class="cart">
+          <a href="cart" class="fa fa-shopping-cart"> Cart</a>
+        </div>
+        <div class="signin">
+          <a href="details" class="fa fa-user-circle">Sign in</a>
+        </div>
+      </nav>
+      <div class="sidebar">
+        <ul class="sidebar-list">
+          <h4>TOP CATEGORY</h4>
+          <li><a href="home">Home</a></li>
+          <li><a href="men">Men's Fashion</a></li>
+          <li><a href="women">Women's Fashion</a></li>
+          <li><a href="kitchen">Home & Kitchen</a></li>
+          <li><a href="kids">Kids'Fashion</a></li>
+          <li><a href="beauty">Beauty,Health</a></li>
+          <li><a href="Electronics">Electronics</a></li>
+          <li><a href="sports">Sports</a></li>
+          <li><a href="Wishlist">Wishlist</a></li>
+          <li><a href="settings">Settings</a></li>
+          <li><a href="logout">Logout</a></li>
+          </ul>
+      </div>
+      <h2>Beauty products</h2>
+		<div class="categories">
+			<div class="category">
+				<img src="https://m.media-amazon.com/images/I/81AZ8HNIxtL._SX522_PIbundle-4,TopRight,0,0_AA522SH20_.jpg" alt="category 1">
+				<h2><a href="lipstick">Lipstick</a></h2>
+			</div>
+      <div class="category">
+        <img src="https://m.media-amazon.com/images/I/41vbqH-IKVL._SX522_.jpg">
+				<h2><a href="foundation">Foundation</a></h2>
+        </div>
+        <div class="category">
+          <img src="https://images.mamaearth.in/catalog/product/a/r/artboard_3_3.png?fit=contain&width=332"> 
+          <h2><a href="compact">Compact</a></h2>
+          </div>
+          <div class="category">
+            <img src="https://rukminim1.flixcart.com/image/416/416/k3bwrrk0/eye-liner/s/e/c/1-long-lasting-waterproof-cool-black-eyeliner-hd-fashion-original-imafh7zyysqnzvuj.jpeg?q=70">
+             <h2><a href="liner">Eye liner</a></h2>
+            </div>
+            <div>
+            <h2>Health Care</h2>
+            <div class="categories">
+            <div class="category">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoO2jXeahg1zb_lVmO-x_hmWyugmnploVTgLSRYuYJg&usqp=CAU&ec=48600112">
+              <h2><a href="jump">Jump Suits</a></h2>
+              </div>
+              <div class="category">
+                <img src="https://5.imimg.com/data5/RZ/WM/YL/SELLER-20299944/long-sleeves-boys-kids-dresses-jeans-500x500.jpg">
+                <h2><a href="jk">Jeans</a></h2>
+                </div>
+                <div class="category">
+                  <img src="https://i.pinimg.com/640x/62/4d/89/624d8950947810a0d2243efac6c8613f.jpg">
+                  <h2><a href="kids1">Ethnic wear</a></h2>
+                </div>
+                <div class="category">
+                  <img src="https://img2.exportersindia.com/product_images/bc-full/2022/8/8817795/children-ethnic-wear-1661843287-6514339.jpeg">
+                  <h2><a href="kids2">Boys Ethnic wear</a></h2>
+                  </div>
+                  </div>
+                </div>
+            </div>
+            </body>
+            </html>
+
+ </body>
+ </html>

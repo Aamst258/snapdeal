@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#trackingContainer {
+    margin-top: 50px;
+}
+
+#trackingNumber {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#trackButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#trackingResults {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Tracking Page</h1>
+    <div id="trackingContainer">
+        <input type="text" id="trackingNumber" placeholder="Enter tracking number">
+        <button id="trackButton">Track</button>
+        <div id="trackingResults"></div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+    var trackButton = document.getElementById('trackButton');
+    trackButton.addEventListener('click', function() {
+        var trackingNumberInput = document.getElementById('trackingNumber');
+        var trackingNumber = trackingNumberInput.value;
+
+        if (trackingNumber.trim() === '') {
+            alert('Please enter a tracking number');
+            return;
+        }
+
+        // Simulating tracking results
+        var trackingResultsDiv = document.getElementById('trackingResults');
+        trackingResultsDiv.innerHTML = 'Tracking Number: ' + trackingNumber + '<br>' +
+                                        'Status: Shipped<br>' +
+                                        'Estimated Delivery Date: May 30, 2023';
+    });
+});
+
+
+    </script>
+</body>
+</html>
+

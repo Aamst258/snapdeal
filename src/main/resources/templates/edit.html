@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Setting Page</title>
+    <style>
+        body {
+            background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/b75787134357153.Y3JvcCw3NzQsNjA1LDc0LDgw.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        
+        #img1 {
+            margin-left: 25rem;
+            margin-top: -1rem;
+        }
+        
+        .icon {
+            margin-left: 29rem;
+            margin-top: -1.5rem;
+        }
+        
+        .container {
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(241, 40, 80);
+            color: rgb(230, 210, 210);
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        select {
+            font-size: 23px;
+            border-radius: 5px solid;
+        }
+    </style>
+    <script>
+        function validate_input() {
+            var FirstName = document.reg.fn.value;
+            var LastName = document.reg.ln.value;
+            var Gender = document.reg.gend.value;
+            var CellNo = document.reg.cn.value;
+            var Address = document.reg.Add.value;
+            var State = document.reg.Sta.value;
+            var City = document.reg.Cit.value;
+            var PinNo = document.reg.pn.value;
+            if (FirstName === "") {
+                alert("First Name cannot be blank");
+                return false;
+            } else if (LastName === "") {
+                alert("Last Name cannot be blank");
+                return false;
+            } else if (Gender === "") {
+                alert("Gender cannot be blank");
+                return false;
+            } else if (CellNo === "") {
+                alert("Cell Number cannot be blank");
+                return false;
+            } else if (Address === "") {
+                alert("Address cannot be blank");
+                return false;
+            } else if (State === "") {
+                alert("State Name cannot be blank");
+                return false;
+            } else if (City === "") {
+                alert("City Name cannot be blank");
+                return false;
+            } else if (PinNo === "") {
+                alert("Pin Code cannot be blank");
+                return false;
+            } else {
+                alert("Profile Successfully");
+            }
+        }
+    </script>
+    <div id="img1">
+        <img src="https://cdn.vectorstock.com/i/preview-1x/76/27/default-profile-picture-avatar-photo-placeholder-vector-30247627.jpg" width="10%">
+    </div>
+    <div class="icon">
+        <a href="#" class="fa fa-camera"></a>
+    </div>
+    <div class="container">
+        <h1>Profile</h1>
+        <form action="#" method="post" name="reg">
+            <label for="First Name">First Name:</label>
+            <input type="text" id="FirstName" name="fn"><br>
+            <label for="Last Name">Last Name:</label>
+            <input type="text" id="LastName" name="ln"><br>
+            <label for="Gender">Gender:</label>
+            <input type="text" id="Gender" name="gend"><br>
+            <label for="Cell No">Cell No:</label>
+            <input type="text" id="CellNo" name="cn"><br>
+            <label for="Address">Address:</label>
+            <input type="text" id="Address" name="Add"><br>
+            <label for="State">State:</label>
+            <input type="text" id="State" name="Sta"><br>
+            <label for="City">City:</label>
+            <input type="text" id="City" name="Cit"><br>
+            <label for="Pin No">Pin No:</label>
+            <input type="text" id="PinNo" name="pn"><br>
+            <a href="settings.html"><button onclick="return validate_input()">Done</a>
+        </form>
+    </div>
+    </body>
+
+</html>

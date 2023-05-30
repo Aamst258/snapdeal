@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            body{
+                background-color: black;
+            }
+            input[type=text],input[type=password]{
+                width: 19%;
+                padding: 19.6px;
+                font-size: 17px;
+                border-radius: 18px;
+                border-color: crimson;
+                border-width: 7px;
+                background-color: black;
+                color: white;
+            }
+            #us{
+               margin-top: 3rem;
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: crimson;
+            }
+            #uss{
+                
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: crimson;
+            }
+            #usss{
+               
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: crimson;
+            }
+            #cp{
+                
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: crimson;
+            }
+            h1{
+                color: crimson;
+                margin-top: 2rem;
+                font-size: 50px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            }
+            h4{
+                color: rgb(245, 243, 243);
+                font-size: 23px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            input[type="checkbox"]{
+                background-color: aliceblue;
+            }
+            button {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color:crimson;
+            color:white;
+            font-size: 1.2em;
+        }
+        
+        button a {
+            text-decoration: none;
+            color: white;
+        }
+        </style>
+        <script>
+            function validate_input() {
+                var username1 = document.reg.ifsc.value;
+                var username2 = document.reg.hold.value;
+                var password1 = document.reg.acc.value;
+                var password2 = document.reg.confirm.value;
+            if (username1 === "") {
+                alert("IFSC Code cannot be blank");
+                return false;
+            }  else if (username2 === "") {
+                alert("Holder Name cannot be blank");
+                return false;
+            } else if (password1 === "") {
+                alert("Account Number cannot be blank");
+                return false;
+            } else if (password1.length < 8 || password1.length > 12) {
+                alert("Number length must be between 8 to 12");
+                return false;
+            } else if (password2 === "") {
+                alert(" Confirm Account Number cannot be blank");
+                return false;
+            } else if (password2.length < 8 || password2.length > 12) {
+                alert("Number length must be between 8 to 12");
+                return false;
+            } else if (password1 !== password2) {
+                alert("Account number did not match");
+                return false;
+            } else if (password1 === password2) {
+                alert("Account Number created");
+            } else {
+                alert("Submitted successfully");
+            }}
+        </script>
+    </head>
+    <body>
+        <center>
+        <form action="#" method="post" name="reg">
+        <h1>Bank Details</h1>
+        <h4>Please Enter The Bank Details Carefully and Don't Worry, It IS 100% Safe!</h4>
+        <div id="us">
+        <label for="username">IFSC Code:</label><br>
+        <input type="text" placeholder="IFSC Code                                         &#128100" name="ifsc" />
+        </div><br><br><br><br>
+        <div id="cp">
+        <label for="username">Holder Name:</label><br>
+        <input type="text" placeholder="Holder Name                                     &#128100" name="hold" />
+        </div><br><br><br><br>
+        <div id="uss">
+        <label for="username">Account Number:</label><br>
+        <input type="password" placeholder="Account Number                                &#128274 " name="acc" />
+        </div><br><br><br><br>
+        <div id="usss">
+        <label for="username">Confirm Account Number:</label><br>
+        <input type="password" placeholder="Confirm Account Number                   &#128274" name="confirm" />
+        </div><br><br><br><br>
+        <a href="edit"><button onclick="return validate_input()">SUBMIT</a>
+        </form>
+        </center>
+    </body>
+</html>

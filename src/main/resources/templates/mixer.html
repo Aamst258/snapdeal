@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Mixer web page</title>
+    <style>
+  nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fe2c54;
+  color: #fff;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-bar input[type="text"] {
+  width: 28vw;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button[type="button"] {
+  padding: 10px;
+  background-color: #101210;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px px 0;
+  cursor: pointer;
+}
+
+.cart a,
+.signin a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cart a:hover,
+.signin a:hover {
+  background-color: #555;
+}
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left: 9px;
+  top: 29;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+.sidebar-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-list li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  font-weight: bolder;
+}
+.sidebar-list li a:hover {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 0 0 10px;
+}
+body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			max-width: 1200px;
+			padding: 20px;
+      margin-top: 10px;
+      margin-left: 15rem;
+		}
+		.product-image {
+			float: left;
+			margin-right: 20px;
+		}
+		.product-image img {
+			max-width: 100%;
+			height: auto;
+		}
+		.product-info {
+			overflow: hidden;
+		}
+		.product-title {
+			font-size: 24px;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		.product-description {
+			font-size: 16px;
+			margin-top: 0;
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+		.product-price {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.product-quantity {
+			margin-bottom: 20px;
+		}
+		.quantity-label {
+			font-size: 16px;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+		.quantity-input {
+			padding: 5px;
+			font-size: 16px;
+			width: 50px;
+		}
+		.add-to-cart,
+		.add-to-wishlist,
+		.buy-now {
+			background-color: #008CBA;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+		.add-to-cart:hover,
+		.add-to-wishlist:hover,
+		.buy-now:hover {
+			background-color: #005F6B;
+		}
+		.button-row {
+			display: flex;
+			justify-content: space-between;
+		}
+        .product-image img {
+         transition: transform .3s ease;
+        }
+
+        .product-image:hover img {
+        transform: scale(1.2);
+        }
+
+       .product-image:active img {
+       transform: scale(0.8);
+       }
+       .buy-now a{
+        text-decoration: none;
+        color: #f1f1f1;
+       }
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Snapdeal</a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" >
+          <button type="button" class="fa fa-camera"></button>
+          <button type="button" class="fa fa-microphone"></button>
+        </div>
+        <div class="cart">
+          <a href="map" class="fa fa-map-marker"> Location</a>
+        </div>
+        <div class="cart">
+          <a href="cart" class="fa fa-shopping-cart"> Cart</a>
+        </div>
+        <div class="signin">
+          <a href="details" class="fa fa-user-circle">Sign in</a>
+        </div>
+      </nav>
+      <div class="sidebar">
+        <ul class="sidebar-list">
+            <h4>TOP CATEGORY</h4>
+          <li><a href="home">Home</a></li> 
+          <li><a href="men">Men's Fashion</a></li>
+          <li><a href="women">Women's Fashion</a></li>
+          <li><a href="kitchen">Home & Kitchen</a></li>
+          <li><a href="kids">Kid's Fashion</a></li>
+          <li><a href="beauty">Beauty,Health</a></li>
+          <li><a href="Electronics">Electronics</a></li>
+          <li><a href="sports">Sports</a></li>
+          <li><a href="wishlist">Wishlist</a></li>
+          <li><a href="settings">Settings</a></li>
+          <li><a href="logout">Logout</a></li> 
+        </ul>
+      </div>
+      <div class="container">
+        <div class="product-image">
+          <img src="data:image/webp;base64,UklGRtAaAABXRUJQVlA4IMQaAAAwbACdASrhAEgBPj0cjESiIaESCKUMIAPEs7dwufiEEA6/8K6Qewz6D+p8EiWjtkzpf6L1m/nD2D/1o6XfmJ/aL9xveN9Ov+P9RT+wdUF6CfTG/uJlKDJ/9N4U+On0X7W/3z/z8/3rnzE/lf3p/LfmZ7Of8nxl+OH9f+YXwHfln9C/yH5m8MtaD/feoL7f/Rf85/bf3i/t/pv/7Hoj9jv+j7gP6t/6L1t/5HiIfZP9L/y/cI/lv9X/4P+H/MX6gP7D/vf6j8uveX9I/9X/LfAj/Nf7B/vP79++H+f8CP7cf//3Ov2OIal+09HwEFjQN+WQbV5tXZG3Csg2rzauyNtrODBWQbV5tXR9h9kuLPfCv9pgrZnuVrsjbhWFrDZvvn9Y6nQsi3L/YgA/RzSYOfNPR8BBK+ApwH0P40qLy01uyzM5opeG8ItjFzTHTx4zn+9+InPHoaW3CsgyQn59NotiANpXslVoAroiq+mx96pDjZSjRY0DctvBJY0t8g/YLC4N5KK5eepNndRChJF/INqqok2820trYzLWUgSXRh+hemkg6uQRSdRaw2fgKcDtUwRaknzFn9NOfMCO8KfH1AoH7QclY0WnrBQinb68/2AVOC57VWWBck92ZEC1ejxrm/QBaVGpftONyxAlzyXEyOcV75KxHslsj27u8KHTPIH04idhtf8zgEQyEVc7yc5A5n3gTjPtEK38uTOtUeqI5TjHwaq3PxuKXpuL25XVS6epBXc/ia1yS9pk5svS7S0e629kW9JqB9s9XCpz9OMo9dYybKlisqAfBXhDaDztgGQEl3hqLuX9m2fQKnt4nBcELOO49yTwzgDMLuAIUz+UygGMGNjUGSzkZIrbre4HkBzSFUMLd0Cp/jyCsGNqhr/0Ds8NpvpkriUuOuqKukMOu7J1HqS2L0qCCzDicEiGw/R/fsGQQ1E1QYJT5WRYnpdj7px0aLYF+gAFZ+1y7IrIwZk5Z6176IaSLGGmklKNP+EuVzrg7zbKnErzz3QYd7q16E8KagrqJGVhY5EEJpmEfSn6DEZ6/QecQ51G8Omj7x3jvtp8IK5NaR/kZVRTq2RTQRLZq8nCaBxlnFKV7kM8QUBgYbzSrQ+ZVzQ809HwEFjQN+WQbV5tXZG3Csg2rzauyNuFZBtXm1dkbaQAAP7/yigAAAFNphS/2fqzUhZFp5iV7RCtmehCU8mw/KszmlUnUT3T3ZF7cBQ0p/B4vPA7OVWrV7AgdXeVtR/yOHws3MwD0INO15/UZ2NZ4jXGrF7KCSdiysIISprtVASBf7454TJX1yyypUxrXhbckSb68Fgwc3mYKrBX+jPRHd4mWyZfaV126r9csT7yVNSUSCHBxuXyUBHJme5CJjMKwxS248rWfJt+6XPsH9OAy6BEoMoQeJFN3rnAKpyztzD64pyaQoprub7XCY19ENszL/TpPM0bPC2YdhVvpRSEAC97EphzHwnxJIqcT7oC2Ml5mv9iI42yCSiaUHUnYHTJ96IefyuhuN+dUXvQV/6xlh1CsfJJg2m+KiE3hxLX7H2CXAR41v6Z/oaWtP1u2GmVJyyYpkLCG0aN/Udm9NGOUUeTPWKLVTLlM2mFTZeZlC9rYPvK42xc1OfviN7X9JW8JIWAS43FFdP+DkOkrkrXmsjlWmyaiC/7IIfc2vZmREVmpXJWeqK5PhwNWSbsSlVgV7dSlVp9YNbLj/VtF7sDWyvXRGQ/SL52/0ldlk/bokLxtePhN4Banry6Ww9ic02OlvhME9gvNRWvNHe5CKaH0P8FzAMGew9uMgi2hwxUDsAqbMpkFy/w6VrPGuZTvQZ0Mg8ewwxfWCooPn8auRoEm8BHd9fxEfy44DwGKMFW3wRdL3Ll5sdSzeIuc3Ce+qRjplg/65hE+OFQoLFBgEOZSPq4SzWFXlh8a4HHHuXijguAfHzVqnPfxSivpgd11PFt3RmGV+qHikvFA7bL0K/UQvIupxmQmWLeDTzRbq6wtKvRXAVxADZdjDV99RKqnIrPfZJewHj4oCWGYu3QzG4qEnEu37pK5z+sw0rNZBhUHUSo5CEnCNdufh02d23gkKTb8kdTPMt0OFpfUN9RzEYgrbc1FXTiYY/NTJV7cDnHS8R5vkFX726GBDqmw29nsJvWuccjgxEFnQVk3SLcsdZwYNVP3xqqe1nmoqRkFoQygD7WmCdsmAxjH1U6lpGOxvxVUUB6FX3taEpLW1zTPjhR/Z54zdTWylp8qpviU+j6HE1IKxiFzRalKuC41y5x+b3J5p09j7SihSFR/8ULNdn85ajx+lGzWVJAjenembWJnMmKUQb4XZZsh4KqOI757/wV7wZfYedoVVWulG8/T6e6RfW18Y55dWTWP2pCXAP0OOHDVzbP33D3H9pRkPv+YfVasWe8jr0HxMIYxK4RYwrbRjXoP5spKEyQ9gwDlNsuheQI+9dTUfzaY+f+D3cvgsOGlB4IfIEnfZFbXEpH8gjqRYvrZBvBrRxhDxOcU3C9uEGLQpyEJV2Pe4gk18g7MCrTXaMZLBKMmtp1oU4xCUrJE0Pvl2bhtsN8wmfIU8G4FIOe/+9DF0SytbdDzcj7/iMsEoGvxtn19PoIL/izjVmf/o1CfQzz+dWcgiMXv68IcXDq//hx3YYs20Kc9aXKKFVFmGDc8QSwhUmpHY3Hc/5PfCS8+61h7oc1E3rwQ+6FNBWKKVZqwsipXic46C6xNquAe11FNMSs5LWq1o8Zu5SG6Be7IqZoK6t6foApB75sjDz8uAJHN7sdqtwe/8BQ3hsDEste+KTMwdMcvD5ufUeeLlGYf2kzutK10yaIE1O3DuSmFrW+1FMh5meuGpgxnhHnfNUaNmf3+y8rhw/tZ2fs9V1ODRr1+cwDTL39a7hgfidZo6LlATRZUQGOSlCJTJJHneoy6bxglAfaC7+OXKME74wfu/xfGUqS4/uVng4NhlOwppm6m660AHhTST6GyurufrhIIxTmdrSz2//h1tNbcEAZcOpmv/MZaSdDenX4nGokI4nUJZOmE5GH/uGJmF5wniunnHuPm2HsgKBEYcRs/Gvx6kP9aOyKNssiEm61UMUdBbO8PAuZML5Dc1NMi2PCLhKcwWd1wyaZ2gIKFwCPgh9ymEqivjm+3nyJ5bMVvIjbxIx080ImbGTU61ruKzPEeZSx+x19POJjhI7oznoOs5oZnJMmvaQApECBwIDb/evdmOnWPLQGIOO6DWWfpBx3mKb9rDJB9Ciu93CnbvcBi2429pvVzYYvq6NfW9w/x1OIwvXe2bfQdvZ9N7G1tsjGHyB7l02PLjJhE0Cu/wRBu9Uop2i9Z+g8X8XUH33vdNn1apdqhpNM1TKigitFgZaeJjqUo1pA9GZOKNjvZYF5WB5olHIn8IH06T4rRBtAmyq/YA82hXjU5RQD/kfRhOdKgDBqDy3dqrkxglZ66BhXIzoHh9StS3y9bm007BsXGQ8LV+NIWnFXpbI3aJFVN+I5c2A8hcDAQYYvrA9Hy5xzjc3mrRe+41xYBLX0JRaUlctaTr+kgz98VmLSJrkVQZUjzx88zZgbV/jrQBR8OPmUPms+31i1EHTRah+5kCt5MtlvMVspKytpG4AtS9I/oUzhVLhPCyN3mdeWLR0NkfI1xB5LKS4fd8ZAjx0ojaTfG8a2TqKg35kjRDhHDL1TNqde/Qc80ottHEBQrD3VnsO+zT85G4ZRLa2UMg67DzV4jhWbU3t59OVNSEwcnt2LF88efszyMG5lk9Ry89Bw6kBZPxx2iGVxwFmAPwpEfy+BkoghcXu/t/op0DAIAgWh68qs9VWqh9kD6Gsuj/lHkhjrVmm8l6VPA4s44blbDmImgRughqxtbLO6TX8vgyrDYb37tX3KW/MdDSs2lMpOdctCOvGmtzg+iS+f82Qq1/7+8dUMgXd3I5M8HIuQJC5ercykiUc3mE0HUoF9kV6oip6YZoknAFy8+3/FSDPtf0RyL7ZuSJbL9Hkdvt/wUAAlcKavYknOQ587S/JmRFpztikdp08Ew3RNXpMmYGAZBggbesBRH8nu6oMw8tMIzCUYziYymC/7eR8t1rx3d1zDRMqN2bbJV+J+Qx057L5MxU0XHiK/D4Ea2WzykyCrm2PFNfdpsXX51Dz5DPq21uFASqRlb9rZB1S+UIAZ5EJBXhbSWhB1FqLcAeEFtS1RG06fO3GHxjdTvDYzchWsZAEk79wJm/sqd0OZqbPGeUjO6shL4W/k/U+rak5HgrxcXgRT70mDZt4Rj/zD2CJti3bCuG/JU/rCX7Gnw3pKEBaOZM2OMvFRhSTjog+RxMddqYCruVH46lKXxmKWWJ/LTRe3x8zvcI8ZxGRLklmt1gRLhVLiWq8zfx+JZli0QJR8vvTAgWvyD6dHl0g94PWfdKUA9g/MoOanXjksEu01x4KOkdxK7MLNmpKayWj0u3N9A9wzJKPoxmfzGBgHYQVmpIo0TZZhjGyNUyweYvlNUrqo3atYE1pTAzCM7fqOKUEIXajv3Lfz9Zjjhp5KKpd7F28UTfpOsbqErUeNoNcKWdIHnhNCxlDe3F8q7gYdtVH0MP4hzNKJVakTdka2uM3U8fys5WUg+dA3o1zps8d/dqjvGTFBjLUOmeUle54ZWYRlWfy6MJ3r3FjHQRcQrbZsnjQJe+/wpIDGx7OC5neK1A9Cdx+j7Fm9kh+m+POwbqWCVpMYco8HP/9IJDumXmMC5JrNEs9KSABYeU8SHjuazmcRhhFqypIAozCcHxHaa2axmbCt5dZvxklBPIwCmzpFEdgpBxBnyCg6E1Olo3XEd5t2OH3JFnlyrWX71b+RgDTj6Srtr3JDfNye6UygoQj/gxUWImrLs0cq2efJlInqx4WQsobdJu/fVobgD1yuSs90BgfUr9+TgNhV/jaR1V+7mrnxlC2WfIqQCUSX0URHATaudpzCx+MQsOvocWsA/jfNfxTlpn12WS3f7N4cILewrf4GWqHQLXgIKFZ5ifSNVsjArJKKjzTR9K/pUWRNymrc/5AnN6WqwKsNq70YVkFFtKmOQfwDhU9PcCz2bDiJgjVxtzQRLeZSBOAbSAxjT1awwQ8phVaR9HspQ72Az5RhPeeywHstj3E7dW8tYFRhi0tkxFHjWRWuM+6DtGngkAxIHxfD6XM/V1GfWXg8u+Ofb119g+3Z74G6sJEFGwqwVlUfSz3T/U3xJrLReSqgPxdPNagl4oIBgUENdsvxlI/e2Xn/fi/1feGOzyaH/HbgVRcbQk+uURrt9R/MbooIgXhpS3w9+23H9QN+L49UPQAlTDvBJ+Sew5BjOG1Q9n0eFutKcrGOH2MrTvnKwGBP0dV0mTNG+LbAcfp9Y/kN2lMuzWvTHQA4H4oabtJQ0r1/DpOMoW9rb2YF/I4Ndt2bj3PRFoXDODKZPtahL9+npBYNspTwblsvqHHXhMJ9Xymu4SbRj7loCEJcVNSU0Phr7y2AhI+XWbthFmT7rWd0kqS//zsASWZY4XcLtq/XRL/dL8/DEvEHO9+DSpPK6k3XTZsjLdTDInzoWtrT+xHULs4FUa6U5kehlZlGRosMdSRgWydEkk8e9gAwJBoCRcHhaUtfR847MfHOFYNcPdKupEQY7pL1NLnuQ68yasscz6KApLiMlV6S7MiWQIyr9qVxOtVFMct8eeHYtEPXwdUdI9jqBWo3MOxHqhUV4ne3i+kT9mDWtIcznk5wvsOmpDgZBqHN2MMC+C6Kn8AST2igXD2a+xI42vre49Kw+unwAlomXBlC2nffKLEbs4P2DwTzbQ65g6824IEnsf3/VIlEcr3OmoZgsy9TUIBri6RR9tn+m237aWVINz0d2WBfXPpFg9JLVwMe0KQT5O0K+TErUElOx6AK9w5hKULJH6aqw+DQQcrpz1ethN+UWr7iPQAMdvt9ZeL4B+sXphf/eL09HiiOiU2uMBHdn3KNM6ye0yW+XF3CSZvITLojlFvSkB/UUmTcmfeOyUnRko5+X8KIP0s57YCmRGKfClNnaiR3oh5Wa6Jd2Z3Pm4qPTqX951L32MVrNUBIKTKWwGEq5STz3+M3kOzjG06W4av4wB5jJmCk+O3LUQItL8Xlf+6IKGRjtVbu940iItmz0T+V9Wsycxk5O4kTylEpy7hdCR3zAJ36k5pG/y4Ur7ZV8cOZ9KJu6vUjVZEhkS9MqcoSqZp3LWy3hq4z4n5sIenmIZQE35WVxET2m+URBQGtTRAY/gZ8dPwybp5gDsYxp++RjsKfniPNqcZ0JBzC5yZD/Q/tZed1al1fjaB7q4YFlF6LaJs8h4bh23sy/3yZ/8Wm577S4ysssvdMwSo84Vz6hSoyU9H6w4EvBN6BGEhYpFpmYV9jbkbo9p+ybKIHFtcM51WVtIEgO3J1lTcKGtpJ+DkYP6onxzPdjP3RZfOPuaSjtfA+eX/k7mk0j26MbB5rMSndfcWR5fguy+mBZgEyuI4eN8pCXSyqt1yUkpY6U2s4kuiu6BVvB89vbkdldc2si/4ZT9a/n9wenl5wL+eNAH846GU7yLTFyOc3E0qdxh2TynMszO016KshhKIY3tfFCBBACIseP0lfMC49IXekoosEdIUBDI3Fk6y9FtHYhS/XwgNjK12ZLR9HF5PeuxQbDj+ouoe68ZeBxktxSBQektPV/FGL6prAKnPP+AXZ0bVHhyC5WBeDD+DMpErP+xbDC9w8B2LD3fJPz4+NjmOWetyDbEEkMQ54Xa/d/MRlvIRA4NlpZTj51yX9eJ88Ju2qazxjOysqH3egpPuGysILmvSZeiG1R9uX7JCp5eAtHxynDsmE0EITHP9EHdcKykQEDOnqhX8QYUnGlqZOavHLXpMJ2QEAf/Ju169f6szo0BBUrKPRu1ySYDLa59n6PgNKSpdu3FYFDujbt1f+B0ugRNVdMm54Jg6i56AtDqGlmUS2qzrQ/kqv/tLmIWVxYKiHlG2Q+Bid8zoN3+lweDPiVDQF1Vpt/sNDLqEWQ5DBg1nAmuU5POn9YLn+/B6GKNWU7d4Y+p17KsHFzF6KkC/lL5UzU0QVf1oL4USOrd2A/NoQBRnJlZxMsXWukLqyG+qO79bVyCaqc6Md3731oQlj42tT2w/rzvywkBlDJWNzs46GhiAHDSFUMV6L+31/tPDYVHrxbRqdpdA/r18T1Wfysvtx7RT0sbqHNICuY8mvmwY7O0u+LSQ/o1slmMEloKGciWakEkyY6VWTakyctJ1ck1b9ZoQfupf8QWl4sAiTuFAhQb50djK9XR8nqib4PRm7Wcagl/Hu916JUCt2wYi51lLUG5qdZAy+ifriu33kBpX1wxWgP1oJQuEEeloA/TNgS5JNhgPlWpRCZ8Ju/ZkJALxLcQZIdD9YvSl7P+NAvfBf58LUs/S8dnPmHIUnd8EQojCXJSJQcuHtxN0ljc+UBsltm8/CK/5EgU/cv1EgxzwniiCh9u33tm89R6NEpC7gmusQIbQ+L5/YtF2tgPwZx0XUcfQMw8JnQHsFC2u3GVGmPDMTK74n47ZNqHXU/G6c82pjhHvFbh9yl9b6jM42VrlXvkn4+vP0U5mfulr6jj7Dt9tv01kAAQU8WY1UTu7doywTHmAkqjUeB2Dk7cEKqERRRGviHjLK38Cypb+wLvfVqvxcgIE5fJJpeovEXKJvjg1DH+ZrTpB9bc4Cogz98j3IQXkugCw2fWT4/EBubrG8F4KWdzXY1xoNfVHvwyVIEVJDcaLDMue/9khXuFEhdNHdW+9cTSiskfFGpWeM4TYb2hbfBkFBnbebqC09PRR+G0/g5InzZOKxK6B92Ac/7cj+ph/+EfTC/3An4GqChoQTa831WdF9T8ug8CNxKbNBxarN8N5GN1Xf1ujvONPPhf0pPD6dKcRGuvgPHJWuzYujFi5EQgqB1DtAWcKejWXTdejBAYbZuYJ3YLsJfYp0c7kL75KQ1Ke0gbApWHM+luafegB6UbAHE15ZUf7W9WwY6ti4YMaw+pX1KCbZNZNz54MbeAh5pbXfEB9AOfra301nGP59rpLlYHnTKlnuB85dVcZaFUf+2yZJ2uLmPgPAD4acWFjoPUxozsEFUgv4GlKPKL4yxDc6jVry6zKkfkCq/+TBCAm+WNr67Hz6znMNEZPa8ICKlidPpwY05H/c0geBnKfR1yHPL8K/oYk2biMANFETD103xYUqG666RHnkeTWUEcYeKfTTOLn8B3fp2w/eBb88jUZQvfr6S7cfY45gBKGkXbtU7G3GfF5xKsehSY9DUjzu/E+jjK5SnN5GsLuFGKAGDTasgOLiF7+wEv9I9B1HqsccHKYVGG4whmtjMzPu2MIg9KjM+MVnq3WLfQ3F62G3x+pvsU15N5BlZ8oS/8pEf62BaK7Gvl6uzOWYKjNdqcez3l9IAhi9Q3SDTC4Jioy9TvGeW1o8q/KnRbaKXbBpRhX1RdOwo7XRaHS/qzzwGgvSwc5hNVuU/bGbtJqpogc+AT8dZiu4/ELtxza3WJYduxlPigSCiHIOo9GtYYrq+8Vtbh6Dw2HF9WIKRCjWL4AgPquyYwu2nnzeM9vZLh0yfC2wDqY96XiD/YlKY6P+VvFHSOku+HFvT+Oo0/ifubYRwSIWI6T/Uwi6fvC/FoZQ7HxocuGhVwSKU3i1qW89t27qRa4oOZXV9+dsUyq8LDWMkze9dlJ4yx2FNTdvkn88C23QOc56WKfWjg+3mSXGRPPjn99tqCMTuzQi7viPNmvaZsncmew93sBvz0RzUu75mNrPF/eH6FEwJ8SXLlcy4l2LBTH9mgDV3mvVOEpvLvhepned+Bw+mtM7+/OMaJU1HYL6pgWMIZilsID7yRUa9fthkT+WEQcz5AzYdWzOMLvD9xgzes3gX7rlRna8nGGs6aF+0KCdRvyphXoyMrQC+E0iw4bua1JoQNKh30vjx3CL8jWJpRs0TcPe2hR1YKoILchCL/r/0cApNaAdgfLiDW8kkTlQHOjGceZwesFMqlkqHXdFacVxnHxGsNqKTiA6ILlND/VgoQlYbd+iutgEorRrRLGHKbO+KgDGMOJt+xynN3f5npF/5oOHL7Mp1Ut+AXhG/GjElqDCIRb/SXgG+CDutQFJQfoVqPq3jfuMO6lr8+5+9IMGSSjtbNZ+0AAAAAAAAAA=" width="390%">
+        </div>
+        <div class="product-info">
+          <h1 class="product-title">Bajaj Rex 750W Mixer Grinder with Nutri Pro Feature, 4 Jars, White</h1>
+          <p class="product-description">
+            Brand	Bajaj
+            Colour	White
+            Product Dimensions	32D x 36W x 25.5H Centimeters
+            Material	Acrylonitrile Butadiene Styrene (ABS)
+            Blade Material	Stainless Steel
+            Number of Speeds	3
+            Special Feature	Heavy Duty<br><br>
+            About this item
+            750 Watts mixer grinder with multi-function blade
+            Attractive 4 jars with a capacity of 1.8L, 1.5L, 1L and 0.4L
+            ABS material with vibrant color
+            It comes with Titan Motor
+            1 year product warranty</p>
+          <p class="product-price">2199/-</p>
+          <div class="product-quantity">
+            <label for="quantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="quantity" class="quantity-input" value="1">
+          </div>
+          <div class="button-row">
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-wishlist" onclick="addToWishlist()">Add to Wishlist</button>
+            <button class="buy-now"><a href="Payment">BuyNow</button>
+          </div>
+        </div>
+      </div>
+      <script>
+        function addToCart() {
+			var quantity = document.getElementById("quantity").value;
+			alert(quantity + " Product Name added to cart!");
+		}
+		function addToWishlist() {
+			alert("Product Name added to wishlist!");
+		}
+</script>
+ </body>
+ </html>

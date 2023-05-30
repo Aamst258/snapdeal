@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sunglasses Men Page</title>
+    <style>
+  nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fe2c54;
+  color: #fff;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-bar input[type="text"] {
+  width: 28vw;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button[type="button"] {
+  padding: 10px;
+  background-color: #101210;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px px 0;
+  cursor: pointer;
+}
+
+.cart a,
+.signin a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cart a:hover,
+.signin a:hover {
+  background-color: #555;
+}
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left: 9px;
+  top: 29;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+.sidebar-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-list li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  font-weight: bolder;
+}
+.sidebar-list li a:hover {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 0 0 10px;
+}
+body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			max-width: 1200px;
+			padding: 20px;
+      margin-top: 10px;
+      margin-left: 15rem;
+		}
+		.product-image {
+			float: left;
+			margin-right: 20px;
+		}
+		.product-image img {
+			max-width: 100%;
+			height: auto;
+		}
+		.product-info {
+			overflow: hidden;
+		}
+		.product-title {
+			font-size: 24px;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		.product-description {
+			font-size: 16px;
+			margin-top: 0;
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+		.product-price {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.product-quantity {
+			margin-bottom: 20px;
+		}
+		.quantity-label {
+			font-size: 16px;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+		.quantity-input {
+			padding: 5px;
+			font-size: 16px;
+			width: 50px;
+		}
+		.add-to-cart,
+		.add-to-wishlist,
+		.buy-now {
+			background-color: #008CBA;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+		.add-to-cart:hover,
+		.add-to-wishlist:hover,
+		.buy-now:hover {
+			background-color: #005F6B;
+		}
+		.button-row {
+			display: flex;
+			justify-content: space-between;
+		}
+    .product-image img {
+         transition: transform .3s ease;
+        }
+
+        .product-image:hover img {
+        transform: scale(1.2);
+        }
+
+       .product-image:active img {
+       transform: scale(0.8);
+       }
+       .buy-now a{
+             text-decoration: none;
+             color: #f1f1f1;
+       }
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Snapdeal</a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" >
+          <button type="button" class="fa fa-camera"></button>
+          <button type="button" class="fa fa-microphone"></button>
+        </div>
+        <div class="cart">
+          <a href="map" class="fa fa-map-marker"> Location</a>
+        </div>
+        <div class="cart">
+          <a href="cart" class="fa fa-shopping-cart"> Cart</a>
+        </div>
+        <div class="signin">
+          <a href="details" class="fa fa-user-circle">Sign in</a>
+        </div>
+      </nav>
+      <div class="sidebar">
+        <ul class="sidebar-list">
+            <h4>TOP CATEGORY</h4>
+          <li><a href="home">Home</a></li> 
+          <li><a href="men">Men's Fashion</a></li>
+          <li><a href="women">Women's Fashion</a></li>
+          <li><a href="kitchen">Home & Kitchen</a></li>
+          <li><a href="kids">Kid's Fashion</a></li>
+          <li><a href="beauty">Beauty,Health</a></li>
+          <li><a href="Electronics">Electronics</a></li>
+          <li><a href="sports">Sports</a></li>
+          <li><a href="wishlist">Wishlist</a></li>
+          <li><a href="settings">Settings</a></li>
+          <li><a href="logout">Logout</a></li> 
+        </ul>
+      </div>
+      <div class="container">
+        <div class="product-image">
+          <img src="data:image/jpeg;base64,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" alt="Product Image">
+        </div>
+        <div class="product-info">
+          <h1 class="product-title">Sunglass for Men</h1>
+          <p class="product-description">Product Description goes here</p>
+          <p class="product-price">$1899.99</p>
+          <div class="product-quantity">
+            <label for="quantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="quantity" class="quantity-input" value="1">
+          </div>
+          <div class="button-row">
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <button class="add-to-wishlist" onclick="addToWishlist()">Add to Wishlist</button>
+            <button class="buy-now"><a href="Payment">BuyNow</button>
+          </div>
+        </div>
+      </div>
+      <script>
+        function addToCart() {
+			var quantity = document.getElementById("quantity").value;
+			alert(quantity + " Product Name added to cart!");
+		}
+		function addToWishlist() {
+			alert("Product Name added to wishlist!");
+		}
+</script>
+ </body>
+ </html>
