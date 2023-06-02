@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Add Product</h1> 
+
+<form th:action="@{/productinfo}" th:object="${product}"   enctype="multipart/form-data"  method="post"> 
+<input type="text" name="productName"  placeholder="Enter Product Name"  />
+<input type="text" name="categoryName" placeholder="Enter category of Product"   />
+<input type="number" name="price"  placeholder="Enter price of product"  /> 
+
+<textarea  name="description"  placeholder= "write about product" ></textarea>
+<button type="submit">Save</button>
+
+
+
+
+</form>
+</body>
+</html>

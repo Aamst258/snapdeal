@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url('https://media.istockphoto.com/id/1294406044/photo/spring-cherry-bouquet-in-a-glass-vase-outdoors.jpg?s=612x612&w=0&k=20&c=3KPjB9cvhT3Qjg5-7zBSAnvAY9m4ZQcWsKv8088E4pc=');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        input {
+            background-color: rgb(153, 81, 48);
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0d1013;
+            
+            font-size: 20px;
+            cursor: pointer; 
+            color:white;
+        }
+        
+        button:hover {
+            background-color: #0066cc;
+        }
+    </style>
+    <script>
+        function validate_input() {
+            var username = document.reg.userName.value;
+            var password1 = document.reg.password.value;
+            var email = document.reg.email.value;
+            var password2 = document.reg.confirmpassword.value;
+            if (username === "") {
+                alert("username cannot be blank");
+                return false;
+            } else if (email === "") {
+                alert("email cannot be blank");
+                return false;
+            } else if (password1 === "") {
+                alert("password cannot be blank");
+                return false;
+            } else if (password1.length < 8 || password1.length > 12) {
+                alert("password length must be between 8 to 12");
+                return false;
+            } else if (password2 === "") {
+                alert(" Confirm password cannot be blank");
+                return false;
+            } else if (password2.length < 8 || password2.length > 12) {
+                alert("password length must be between 8 to 12");
+                return false;
+            } else if (password1 !== password2) {
+                alert("password didnot match");
+                return false;
+            
+            } else {
+                alert("Register successfully");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form th:action="@{/registeradmin}" method="post" name="reg" th:object=${registeradmin}>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="userName"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirmpassword"><br>
+            <button onclick="return validate_input()"  type="submit"> REGISTER</button>
+        </form>
+    </div>
+</body>
+
+</html>

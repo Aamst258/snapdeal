@@ -16,7 +16,12 @@ import lombok.NoArgsConstructor;
  */
 @Document(collection = "register")
 public class Register {
-        private String userName; 
+        @Override
+	public String toString() {
+		return "Register [userName=" + userName + ", email=" + email + ", password=" + password + "]";
+	}
+
+		private String userName; 
         @Id
     private String email;
     private String password;   

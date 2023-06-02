@@ -1,16 +1,13 @@
 /*
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.snapdeal.snapdeal;
 
-import java.util.HashMap;
 
-import java.util.Map;
+import java.util.List;
 
-import javax.management.Query;
-
-import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Controller;
@@ -19,6 +16,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.snapdeal.snapdeal.Model.Admin;
+import com.snapdeal.snapdeal.Model.Product;
+import com.snapdeal.snapdeal.Repositry.AdminRepository;
+import com.snapdeal.snapdeal.Repositry.ProductRepositroy;
+import com.snapdeal.snapdeal.Service.ProductService;
 
 
 import com.snapdeal.snapdeal.Model.Register;
@@ -31,7 +33,13 @@ import com.snapdeal.snapdeal.Repositry.RegisterRepository;
 @Controller
 public class SnapdealController {  
 	 
-
+	@Autowired
+ 	private AdminRepository admin_repo;  
+ 	@Autowired 
+ 	private ProductService productService; 
+ 	@Autowired
+ 	private ProductRepositroy product_repo; 
+  
 	
     @RequestMapping("/register")
     public String register(Model model){ 
@@ -50,7 +58,7 @@ model.addAttribute("register", new Register());
 		model.addAttribute("register", new Register());
 		System.out.println("user"+ user);
 		
-		return null; 
+		return "signin"; 
     	 
 		
     	
@@ -69,11 +77,11 @@ model.addAttribute("register", new Register());
     } 
     
     @RequestMapping("/signin")
-    public String signin(){
+    public String signindefault(){
         return "signin";
     }  
     @RequestMapping(value="/loginuser", method=RequestMethod.POST)
-    public String loginUser(String email, String password, Model model) {
+    public String loginUserofcustomer(String email, String password, Model model) {
     	Register  user = register_repo.findByEmail(email);
          if (user != null && user.getPassword().equals(password)) {
              model.addAttribute("user", user);
@@ -82,11 +90,56 @@ model.addAttribute("register", new Register());
              model.addAttribute("error", "Invalid username or password");
              return "signin";
          }
+    }   	
+         
+     	@RequestMapping("/registerasadmin")
+     	public String registerAdmin(Model model) {
+     model.addAttribute("admin", new Admin());
+     		return "registerAdmin";
+     	}
+     	 
+     	@RequestMapping(value="/registeradmin",method=RequestMethod.POST) 
+         public String registerUser(@ModelAttribute("admin") Admin user, Model model ) {
+     		this.admin_repo.save(user);
+     		model.addAttribute("admin", new Admin());
+     		System.out.println("user"+ user);
+     		
+     		return "siginAdmin"; 
+         	 
+     	} 		
+         	
+         
+     	 @RequestMapping("/siginasadmin")
+     	    public String signin(){
+     	        return "siginAdmin";
+     	    }  
+     	 @RequestMapping(value="/loginadmin", method=RequestMethod.POST)
+     	    public String loginUser(String email, String password, Model model) {
+     	    	Admin user = admin_repo.findByEmail(email);
+     	         if (user != null && user.getPassword().equals(password)) {
+     	             model.addAttribute("user", user);
+     	             return "addproduct";
+     	         } else {
+     	             model.addAttribute("error", "Invalid username or password");
+     	             return "siginAdmin";
+     	         }
+     	    
+     	   }  
+     	 @RequestMapping("/addproduct")
+     	    public String navigateProduct(Model model) { 
+     		 model.addAttribute("product", new Product());
+     	    	return "addproduct";
+     	    }  
+     	 @RequestMapping(value="/productinfo",method=RequestMethod.POST)
+     	 public String addProduct(@ModelAttribute  Product product,Model model)  { 
+     		 this.product_repo.save(product);
+     		 model.addAttribute("product", new Product());
+     		 System.out.println("product" + product);
+     		 return "addproduct";
+     	 } 
     	
-    	 
     	
-    	
-    }
+    
     @RequestMapping("/home")
     public String home(){
         return "home";
@@ -116,7 +169,11 @@ model.addAttribute("register", new Register());
         return "Electronics";
     }
     @RequestMapping("/sports")
-    public String sports(){
+    public String sports(Model model){  
+    
+    	List<Product> products = this.product_repo.findAll();
+    	model.addAttribute("products", products);
+    	
         return "sports";
     }
     @RequestMapping("/wishlist")

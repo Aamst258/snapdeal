@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"   xmlns:th="http://www.thymeleaf.org/" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -165,6 +165,24 @@ h2 {
             <img src="https://cdn.shopify.com/s/files/1/0011/8367/8476/products/0_99b11fe8-e76a-4b13-83c9-e80c587fd0a7_1800x1800.png?v=1623746054">
              <h2><a href="lagori">lagori</a></h2>
             </div>
-            </div>
+            </div>   
+            
+            <h1>Product List</h1>
+    <table  >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}" scope="row">
+                <td >[[*{product.productName}]]</td>
+                <td >[[*{product.description}]]</td>
+                <td >[[*{product.price}]]</td>
+            </tr>
+        </tbody> 
+        </table>
         </body>
  </html>
