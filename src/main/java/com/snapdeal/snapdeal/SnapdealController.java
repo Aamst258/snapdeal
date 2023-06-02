@@ -5,6 +5,7 @@
 package com.snapdeal.snapdeal;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 import javax.management.Query;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,33 +31,28 @@ import com.snapdeal.snapdeal.Repositry.RegisterRepository;
 @Controller
 public class SnapdealController {  
 	 
-	private Map<String, Register> users;
+
 	
     @RequestMapping("/register")
-    public String register(){
+    public String register(Model model){ 
+model.addAttribute("register", new Register());
         return "register";
     }  
     
     @Autowired 
     private RegisterRepository register_repo ; 
     public SnapdealController(RegisterRepository register_repo) {
-		this.users = new HashMap<>();
 		this.register_repo = register_repo;
 	}
 	@RequestMapping(value="/registeruser",method=RequestMethod.POST) 
-    public String registerUser(@RequestParam String password , @RequestParam String  userName ,@RequestParam String email ) { 
+    public String registerUser(@ModelAttribute("register") Register user, Model model ) {
+		this.register_repo.save(user);
+		model.addAttribute("register", new Register());
+		System.out.println("user"+ user);
+		
+		return null; 
     	 
-		if(register_repo.existsById(email)) {
-			return "register"; 
-			// user already exists
-		}
-    	Register user =  new Register();
-    	user.setEmail(email);
-    	user.setPassword(password);
-    	user.setUserName(userName);
-    	this.register_repo.save(user);  
-    	System.out.println("user");
-		return "signin";
+		
     	
     }
     @RequestMapping("/map")
@@ -76,16 +73,16 @@ public class SnapdealController {
         return "signin";
     }  
     @RequestMapping(value="/loginuser", method=RequestMethod.POST)
-    public String loginUser(@RequestParam("email") String email, @RequestParam("password") String password) {
-
-    	Register user = users.get(email);
-        if (user != null && user.getPassword().equals(password)) {
-            System.out.println("Login successful!");
-            return "home";
-        } else {
-            System.out.println("Invalid username or password!");
-            return "signin";
-        }
+    public String loginUser(String email, String password, Model model) {
+    	Register  user = register_repo.findByEmail(email);
+         if (user != null && user.getPassword().equals(password)) {
+             model.addAttribute("user", user);
+             return "home";
+         } else {
+             model.addAttribute("error", "Invalid username or password");
+             return "signin";
+         }
+    	
     	 
     	
     	

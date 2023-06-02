@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html  xmlns:th="http://www.thymeleaf.org/">
 
 <head>
     <meta charset="UTF-8">
@@ -103,7 +103,7 @@
 <body>
     <div class="container">
         <h1>Registration Form</h1>
-        <form action="/registeruser" method="post" name="reg">
+        <form th:action="@{/registeruser}" method="post" name="reg" th:object=${register}>
             <label for="username">Username:</label>
             <input type="text" id="username" name="userName"><br>
             <label for="email">Email:</label>
