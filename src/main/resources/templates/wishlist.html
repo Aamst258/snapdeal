@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Wishlist PAge</title>
-    <style>
+  <!--    <style>
 nav {
   display: flex;
   justify-content: space-between;
@@ -113,10 +113,10 @@ button:hover{
   font-size: 20px;
   color: #000;
 }
-</style>
+</style>  -->
 </head>
 <body>
-    <nav>
+   <!--   <nav>
         <div class="logo">
           <a href="#">Snapdeal</a>
         </div>
@@ -177,7 +177,28 @@ button:hover{
           <p>cream color function wear saari</p>
           <p>$1599.99</p>
         </div>
-       </div>
+       </div>  -->
+<!-- wishlist.html -->
+
+    <h1>Wishlist</h1>
+     <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>price</th>
+                
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${wishlistItems}">
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.price}"></td>
+                <td><img th:src="${product.image}" alt="not found"  style="width:50px"></td>
+            </tr>
+        </tbody>
+    </table>
+
 
  </body>
  </html>

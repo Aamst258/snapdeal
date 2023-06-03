@@ -2,7 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Insert title here</title>  
+
+<style>
+input,textarea{
+
+display:block;
+}
+</style>
 </head>
 <body>
 <h1>Add Product</h1> 
@@ -11,8 +18,8 @@
 <input type="text" name="productName"  placeholder="Enter Product Name"  />
 <input type="text" name="categoryName" placeholder="Enter category of Product"   />
 <input type="number" name="price"  placeholder="Enter price of product"  /> 
-
-<textarea  name="description"  placeholder= "write about product" ></textarea>
+<input type="text" name="image" placeholder="Enter image url"   />
+<textarea  name="description"  placeholder= "write about product"   rows="20"></textarea>
 <button type="submit">Save</button>
 
 

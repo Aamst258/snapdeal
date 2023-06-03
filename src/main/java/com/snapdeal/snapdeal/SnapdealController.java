@@ -17,14 +17,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.snapdeal.snapdeal.Model.Admin;
+import com.snapdeal.snapdeal.Model.Cart;
+import com.snapdeal.snapdeal.Model.Order;
 import com.snapdeal.snapdeal.Model.Product;
 import com.snapdeal.snapdeal.Repositry.AdminRepository;
+import com.snapdeal.snapdeal.Repositry.OrderRepository;
 import com.snapdeal.snapdeal.Repositry.ProductRepositroy;
 import com.snapdeal.snapdeal.Service.ProductService;
 
 
 import com.snapdeal.snapdeal.Model.Register;
+import com.snapdeal.snapdeal.Model.Wishlist;
 import com.snapdeal.snapdeal.Repositry.RegisterRepository;
+import com.snapdeal.snapdeal.Repositry.WishlistRepository;
+import com.snapdeal.snapdeal.Repositry.cartrepository;
 
 /**
  *
@@ -35,11 +41,16 @@ public class SnapdealController {
 	 
 	@Autowired
  	private AdminRepository admin_repo;  
- 	@Autowired 
- 	private ProductService productService; 
+ 	
  	@Autowired
  	private ProductRepositroy product_repo; 
-  
+ 	@Autowired
+ 	private cartrepository cart_repo; 
+ 	
+  @Autowired
+  private WishlistRepository wishlist_repo ;  
+  @Autowired 
+  private OrderRepository order_repo;
 	
     @RequestMapping("/register")
     public String register(Model model){ 
@@ -72,7 +83,9 @@ model.addAttribute("register", new Register());
         return "details";
     } 
     @RequestMapping("/cart")
-    public String cart(){
+    public String cart(Model model){   
+    	List<Cart> cartItems = cart_repo.findAll();
+    	model.addAttribute("cartItems", cartItems);
         return "cart";
     } 
     
@@ -149,35 +162,52 @@ model.addAttribute("register", new Register());
         return "men";
     }
     @RequestMapping("/women")
-    public String women(){
+    public String women(Model model){ 
+    	String categoryName = "women";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
+    	model.addAttribute("products", products);
         return "women";
     }
     @RequestMapping("/kitchen")
-    public String kitchen(){
+    public String kitchen(Model model){ 
+    	String categoryName = "men";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
+    	model.addAttribute("products", products);
         return "kitchen";
     }
     @RequestMapping("/kids")
-    public String kids(){
+    public String kids(Model model){ 
+    	String categoryName = "kids";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
+    	model.addAttribute("products", products);
         return "kids";
     }
     @RequestMapping("/beauty")
-    public String beauty(){
+    public String beauty(Model model){ 
+    	String categoryName = "beauty";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
+    	model.addAttribute("products", products);
         return "beauty";
     }
     @RequestMapping("/Electronics")
-    public String electronics(){
+    public String electronics(Model model){
+    	String categoryName = "electronics";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
+    	model.addAttribute("products", products);
         return "Electronics";
     }
     @RequestMapping("/sports")
     public String sports(Model model){  
-    
-    	List<Product> products = this.product_repo.findAll();
+    String categoryName = "sports";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
     	model.addAttribute("products", products);
     	
         return "sports";
     }
     @RequestMapping("/wishlist")
-    public String Wishlist(){
+    public String Wishlist(Model model){ 
+    	List<Wishlist> wishlistItems = wishlist_repo.findAll();
+    	model.addAttribute("wishlistItems",wishlistItems );
         return "wishlist";
     }
     @RequestMapping("/settings")
@@ -477,6 +507,65 @@ model.addAttribute("register", new Register());
     @RequestMapping("/Tracking_1")
     public String Tracking_1(){
         return "Tracking_1";
+    }  
+    
+    @RequestMapping(value="/addtocart", method = RequestMethod.POST)
+    public String addToCart(@RequestParam("productId") String productId) {
+        // Retrieve the product from the ProductRepository using the product ID
+        Product product = product_repo.findById(productId).orElse(null);
+
+        if (product != null) {
+            // Create a new CartItem and save it to the CartRepository
+            Cart cartItem = new Cart();
+            cartItem.setProductId(productId);
+            cartItem.setImage(product.getImage());
+            cartItem.setPrice(product.getPrice());
+            cartItem.setProductName(product.getProductName());
+            this.cart_repo.save(cartItem);
+        }
+            return "successcart";
+       
+    }  
+    @RequestMapping(value="/addwishlist", method = RequestMethod.POST)
+    public String addToWishlist(@RequestParam("productId") String productId) {
+        // Retrieve the product from the ProductRepository using the product ID
+        Product product = product_repo.findById(productId).orElse(null);
+
+        if (product != null) {
+            // Create a new CartItem and save it to the CartRepository
+            Wishlist wishlist = new Wishlist();
+            wishlist.setProductId(productId);
+            wishlist.setImage(product.getImage());
+            wishlist.setProductName(product.getProductName());
+            wishlist.setPrice(product.getPrice());
+            this.wishlist_repo.save(wishlist);
+        }
+            return "successwishlist";
+       
+    }  
+    @RequestMapping(value="/buynow", method = RequestMethod.POST)
+    public String orderProduct(@RequestParam("productId") String productId) {
+        // Retrieve the product from the ProductRepository using the product ID
+        Product product = product_repo.findById(productId).orElse(null);
+
+        if (product != null) {
+            // Create a new CartItem and save it to the CartRepository
+            Order order = new Order();
+            order.setProductId(productId);
+            order.setImage(product.getImage());
+            order.setProductName(product.getProductName());
+            order.setPrice(product.getPrice());
+            this.order_repo.save(order);
+        }
+            return "successorder";
+       
+    }  
+    @RequestMapping("/yourordes")
+    public String yourOrders(Model model){ 
+    	List<Order> orderedItmes = order_repo.findAll();
+    	model.addAttribute("orderedItems",orderedItmes );
+        return "yourorders";
     }
     
-}
+}  
+//  beauty kitchen  kids  men women

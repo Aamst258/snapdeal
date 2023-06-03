@@ -18,13 +18,19 @@ public class Product {
 	@Id
 	private String pid;
 	private String productName;
-	
+	private String image;
 	private String description;
-	@Override
-	public String toString() {
-		return "Product [pid=" + pid + ", productName=" + productName + ", description="
-				+ description + ", categoryName=" + categoryName + ", price=" + price + "]";
+	private String categoryName;
+	private double price;
+	public String getImage() {
+		return image;
 	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	
+	
 	public String getDescription() {
 		return description;
 	}
@@ -35,18 +41,9 @@ public class Product {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Product(String pid, String productName, String categoryName, double price,String image,String description) {
-		super();
-		this.pid = pid;
-		this.productName = productName;
-		this.categoryName = categoryName;
-		this.price = price;
-		
-		this.description = description;
-	}
 	
-	private String categoryName;
-	private double price;
+	
+	
 	public String getPid() {
 		return pid;
 	}
@@ -71,5 +68,11 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	@Override
+	public String toString() {
+		return "Product [pid=" + pid + ", productName=" + productName + ", image=" + image + ", description="
+				+ description + ", categoryName=" + categoryName + ", price=" + price + "]";
+	}  
+	
     
 }

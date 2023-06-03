@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> Your orders</h1>  
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>price</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${orderedItems}">
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.price}"></td>
+                <td> <img th:src="${product.image}" alt="not found"  style="width:50px" /></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

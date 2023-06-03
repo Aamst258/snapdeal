@@ -3,8 +3,8 @@ package com.snapdeal.snapdeal.Model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Cart")
-public class Cart { 
+@Document(collection = "Order")
+public class Order { 
 	@Id
 	private String id;
 	private String productName;
@@ -12,7 +12,7 @@ public class Cart {
 private String image;
 private double price;
 private String productId;
-	public Cart(String id, String productName, String productCategory, String image, double price, String productId) {
+	public Order(String id, String productName, String productCategory, String image, double price, String productId) {
 	super();
 	this.id = id;
 	this.productName = productName;
@@ -68,7 +68,7 @@ public void setImage(String image) {
 	
 	
 
-	public Cart() {
+	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
 	}  
