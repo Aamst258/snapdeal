@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org/"
+>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +114,7 @@ h2 {
 </style>
 </head>
 <body>
-    <nav>
+ <!--     <nav>
         <div class="logo">
           <a href="#">Snapdeal</a>
         </div>
@@ -204,7 +205,8 @@ h2 {
                 </div>
             </div>
             </body>
-            </html>
+            </html>  --> 
+            <div th:replace="sports::product"></div>
 
  </body>
  </html>

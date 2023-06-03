@@ -158,7 +158,10 @@ model.addAttribute("register", new Register());
         return "home";
     }  
     @RequestMapping("/men")
-    public String men(){
+    public String men(Model model){
+    	String categoryName = "men";
+    	List<Product> products = this.product_repo.findByCategoryName(categoryName);
+    	model.addAttribute("products", products);
         return "men";
     }
     @RequestMapping("/women")
@@ -170,7 +173,7 @@ model.addAttribute("register", new Register());
     }
     @RequestMapping("/kitchen")
     public String kitchen(Model model){ 
-    	String categoryName = "men";
+    	String categoryName = "kitchen";
     	List<Product> products = this.product_repo.findByCategoryName(categoryName);
     	model.addAttribute("products", products);
         return "kitchen";
