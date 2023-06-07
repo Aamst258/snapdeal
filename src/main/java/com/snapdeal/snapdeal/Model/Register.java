@@ -15,15 +15,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(collection = "register")
 public class Register {
-        @Override
-	public String toString() {
-		return "Register [userName=" + userName + ", email=" + email + ", password=" + password + "]";
-	}
+     
 
 		private String userName; 
         @Id
     private String email;
-    private String password;   
+    private String password;      
+    
+    @Override
+ 	public String toString() {
+ 		return "Register [userName=" + userName + ", email=" + email + ", password=" + password + "]";
+ 	}
+    
+    
 public Register(String userName, String email, String password) {
         this.userName = userName;
         this.email = email;

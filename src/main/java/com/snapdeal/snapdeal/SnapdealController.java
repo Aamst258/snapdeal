@@ -1,5 +1,7 @@
 /*
 
+
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -8,8 +10,9 @@ package com.snapdeal.snapdeal;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -70,10 +73,7 @@ model.addAttribute("register", new Register());
 		System.out.println("user"+ user);
 		
 		return "signin"; 
-    	 
-		
-    	
-    }
+    	}
     @RequestMapping("/map")
     public String map(){
         return "map";
