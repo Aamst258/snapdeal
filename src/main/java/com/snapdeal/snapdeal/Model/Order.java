@@ -11,7 +11,8 @@ public class Order {
 	private String productCategory;
 private String image;
 private double price;
-private String productId;
+private String productId;  
+
 	public Order(String id, String productName, String productCategory, String image, double price, String productId) {
 	super();
 	this.id = id;

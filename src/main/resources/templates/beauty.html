@@ -188,47 +188,9 @@ h2 {
                   </div>
                 </div>
             </div>
-            -->
-  <h1>Product List</h1>
-    <table  >
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>description</th>
-                <th>price</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="product : ${products}">
-                <td th:text="${product.productName}"></td>
-                <td th:text="${product.description}"></td>
-                <td th:text="${product.price}" ></td> 
-                <td>  <img th:src="${product.image}" alt="not found"  style="width:50px"></td>
-                <td>
-                <!-- Add to Wishlist button -->
-                <form th:action="@{/addwishlist}" method="POST">
-                    <input type="hidden" name="productId" th:value="${product.pid}" />
-                    <button type="submit">Add to Wishlist</button>
-                </form> 
-                </td>
-                <td>
-                
-                <!-- Add to Cart button -->
-                <form th:action="@{/addtocart}" method="POST">
-                    <input type="hidden" name="productId" th:value="${product.pid}" />
-                    <button type="submit">Add to Cart</button>
-                </form>  
-                </td> 
-                <td>
-                
-                <form th:action="@{/buynow}" method="POST">
-                    <input type="hidden" name="productId" th:value="${product.pid}" />
-                    <button type="submit">Buy now</button>
-                </form> 
-                </td>
-            </tr>
-        </tbody> 
-        </table>
+            -->   
+            <div th:replace="watch::navbar"></div>
+            <div th:replace="watch::sidebar"></div>
+            <div th:replace="sports::product"></div>
  </body>
  </html>

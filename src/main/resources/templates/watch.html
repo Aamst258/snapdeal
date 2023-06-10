@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -181,7 +181,7 @@ body {
 </style>
 </head>
 <body>
-    <nav>
+    <nav  th:fragment="navbar" >
         <div class="logo">
           <a href="#">Snapdeal</a>
         </div>
@@ -200,7 +200,7 @@ body {
           <a href="details" class="fa fa-user-circle">Sign in</a>
         </div>
       </nav>
-      <div class="sidebar">
+      <div class="sidebar"  th:fragment="sidebar">
         <ul class="sidebar-list">
             <h4>TOP CATEGORY</h4>
           <li><a href="home">Home</a></li> 

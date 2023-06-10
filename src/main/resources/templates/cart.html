@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cart web page</title>
-   <!--   <style>
+    <style>
 nav {
   display: flex;
   justify-content: space-between;
@@ -133,7 +133,7 @@ input[type="number"] {
   cursor: pointer;
 }
 
-</style>  -->
+</style> 
 </head>
 <body>
   <!--    <nav>
@@ -250,10 +250,12 @@ tbody.addEventListener('change', function(event) {
 });
 </script>  -->  
 
-<!-- cart.html -->
+<!-- cart.html --> 
+<div th:replace="watch::navbar"></div>
+            <div th:replace="watch::sidebar"></div>
 
     <h1>Cart</h1>
-    <table>
+    <table  style="margin-left:350px;">
         <thead>
             <tr>
                 <th>Name</th>

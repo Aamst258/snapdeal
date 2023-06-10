@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Wishlist PAge</title>
-  <!--    <style>
+     <style>
 nav {
   display: flex;
   justify-content: space-between;
@@ -113,7 +113,7 @@ button:hover{
   font-size: 20px;
   color: #000;
 }
-</style>  -->
+</style>  
 </head>
 <body>
    <!--   <nav>
@@ -178,10 +178,12 @@ button:hover{
           <p>$1599.99</p>
         </div>
        </div>  -->
-<!-- wishlist.html -->
+<!-- wishlist.html --> 
+<div th:replace="watch::navbar"></div>
+            <div th:replace="watch::sidebar"></div>
 
     <h1>Wishlist</h1>
-     <table>
+     <table   style="margin-left:300px;">
         <thead>
             <tr>
                 <th>Name</th>

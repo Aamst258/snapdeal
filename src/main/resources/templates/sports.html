@@ -169,9 +169,11 @@ border-collapse:collapse;
             <img src="https://cdn.shopify.com/s/files/1/0011/8367/8476/products/0_99b11fe8-e76a-4b13-83c9-e80c587fd0a7_1800x1800.png?v=1623746054">
              <h2><a href="lagori">lagori</a></h2>
             </div>
-            </div>   -->
-           <div  th:fragment="product"> 
-            <h1>Product List</h1>
+            </div>   -->  
+             <div th:replace="watch::navbar"></div>
+            <div th:replace="watch::sidebar"></div>
+           <div  th:fragment="product"   style="margin-left:300px;"> 
+            <h1  >Product List</h1>
     <table  >
         <thead>
             <tr>
