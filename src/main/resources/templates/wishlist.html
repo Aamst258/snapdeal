@@ -196,7 +196,14 @@ button:hover{
             <tr th:each="product : ${wishlistItems}">
                 <td th:text="${product.productName}"></td>
                 <td th:text="${product.price}"></td>
-                <td><img th:src="${product.image}" alt="not found"  style="width:50px"></td>
+                <td><img th:src="${product.image}" alt="not found"  style="width:50px"></td> 
+                <td>
+                <form action="/wishlistdelete" method="post">
+    <input type="hidden" name="id" th:value="${product.id}" />
+    <button type="submit">Delete</button>
+</form> </td>
+                
+              
             </tr>
         </tbody>
     </table>

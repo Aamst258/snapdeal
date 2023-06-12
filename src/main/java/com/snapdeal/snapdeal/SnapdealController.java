@@ -212,6 +212,18 @@ model.addAttribute("register", new Register());
     	List<Wishlist> wishlistItems = wishlist_repo.findAll();
     	model.addAttribute("wishlistItems",wishlistItems );
         return "wishlist";
+    }  
+    @RequestMapping(value = "/wishlistdelete", method = RequestMethod.POST)
+    public String deleteFromWishlist(@RequestParam("id") String id, Model model) {
+       this.wishlist_repo.deleteById(id);
+      
+        return "wishlist";
+    }
+    @RequestMapping(value = "/cartdelete", method = RequestMethod.POST)
+    public String deleteFromCart(@RequestParam("id") String id, Model model) {
+       this.cart_repo.deleteById(id);
+      
+        return "cart";
     }
     @RequestMapping("/settings")
     public String settings(){
