@@ -110,8 +110,9 @@ h2 {
 	border-radius: 15px;
 }  
 
-table, tr, th, td{
-border-collapse:collapse;
+table,  th, td{
+border:2px solid black;
+
 }
 </style>
 </head>
@@ -172,31 +173,35 @@ border-collapse:collapse;
             </div>   -->  
              <div th:replace="watch::navbar"></div>
             <div th:replace="watch::sidebar"></div>
-           <div  th:fragment="product"   style="margin-left:300px;"> 
+           <div  th:fragment="product"   style="margin-left:250px;"> 
             <h1  >Product List</h1>
-    <table  >
+    <table  style="width:100%;  border:2px solid black; border-collapse:collapse;" >
         <thead>
             <tr>
-                <th>Name</th>
-                <th>description</th>
-                <th>price</th>
-                <th>Image</th>
+                <th style="width:40px; padding:5px;  border:2px solid black; border-collapse:collapse" >Name</th>
+                <th style="width:200px; padding:5px; border:2px solid black; border-collapse:collapse">description</th>
+                <th style="width:40px; padding:5px; border:2px solid black; border-collapse:collapse" >price</th>
+                <th style="width:200px; padding:5px; border:2px solid black; border-collapse:collapse">Image</th>
+                 <th style="width:40px; padding:5px; border:2px solid black; border-collapse:collapse" >quantity</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="product : ${products}">
-                <td th:text="${product.productName}"></td>
-                <td th:text="${product.description}"></td>
-                <td th:text="${product.price}" ></td> 
-                <td>  <img th:src="${product.image}" alt="not found"  style="width:50px"></td>
-                <td>
+                <td th:text="${product.productName}"   style="width:40px; padding:5px; border:2px solid black; border-collapse:collapse"></td>
+                <td th:text="${product.description}"   style="width:200px; padding:5px; border:2px solid black; border-collapse:collapse"></td>
+                <td th:text="${product.price}"   style="width:40px; padding:5px; border:2px solid black; border-collapse:collapse"  ></td> 
+                <td style="border:2px solid black; padding:5px; border-collapse:collapse;">  <img th:src="${product.image}" alt="not found"  style="width:200px;   transition: transform .3s ease ;" onMouseOver="this.style.transform='scale(1.2)'" onMouseOut="this.style.transform='scale(0.8)'"></td>
+                <td style="padding:5px; border-collapse:collapse; border:2px solid black;" >  <input type="number" id="quantity" class="quantity-input" value="1" style="width:30px;"></td>
+
+                <td  style="width:40px; padding:5px; border:2px solid black;"> 
+                
                 <!-- Add to Wishlist button -->
                 <form th:action="@{/addwishlist}" method="POST">
                     <input type="hidden" name="productId" th:value="${product.pid}" />
                     <button type="submit">Add to Wishlist</button>
                 </form> 
                 </td>
-                <td>
+                <td  style="width:70px; padding:5px; border:2px solid black;">
                 
                 <!-- Add to Cart button -->
                 <form th:action="@{/addtocart}" method="POST">
@@ -204,7 +209,7 @@ border-collapse:collapse;
                     <button type="submit">Add to Cart</button>
                 </form>  
                 </td> 
-                <td>
+                <td  style="width:70px; padding:5px; border:2px solid black;">
                 
                 <form th:action="@{/buynow}" method="POST">
                     <input type="hidden" name="productId" th:value="${product.pid}" />
